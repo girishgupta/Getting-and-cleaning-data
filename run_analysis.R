@@ -2,6 +2,7 @@
 library(RCurl)
 library(plyr)
 library(stringr)
+library(reshape2)
 
 url = 'https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip'
 filename = 'getdata-projectfiles-UCI HAR Dataset.zip';
@@ -92,7 +93,14 @@ names(completeData) = featureLabel$feature;
 completeData$activityCode = NULL
 
 rm(dummyCol,extraCol)
-
+colNums = grep('(Mean|Std)+',names(completeData))
+colNums = c(562,563,colNums)
 #Getting colums related to mean and Std
-meanStdDataset = completeData[,grep('([Mm]ean|[Ss]td)+',names(completeData))]
+tidyDataSet1= completeData[,colNums]
+tidyDataSet2 = aggregate(tidyDataSet1,by=list(tidyDataSet1$subject,tidyDataSet1$activityDes),FUN='mean')
+tidyDataSet2$subject = tidyDataSet2$Group.1;
+tidyDataSet2$activityDes = tidyDataSet2$Group.2;
+tidyDataSet2$Group.1 = NULL
+tidyDataSet2$Group.2 = NULL
+write.table(tidyDataSet2,file='TidyDataSet.txt',row.names=F);
 
