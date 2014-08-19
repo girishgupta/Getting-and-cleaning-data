@@ -7,17 +7,17 @@ url = 'https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%
 filename = 'getdata-projectfiles-UCI HAR Dataset.zip';
 
 #Check if file already exits else download it
-#if(!file.exists(filename)) {
+if(!file.exists(filename)) {
 
-  #download.file(url, destfile='getdata-projectfiles-UCI HAR Dataset.zip', method = 'curl')
+  download.file(url, destfile='getdata-projectfiles-UCI HAR Dataset.zip', method = 'curl')
   
-#}
+}
 
 #Unzip to start with fresh files
-#unzip(filename)
+unzip(filename)
 
 #Changing work directory to unzip folder for easy access.
-#setwd('UCI HAR Dataset')
+setwd('UCI HAR Dataset')
 
 #Reading activity labels
 activityLabels = read.table('activity_labels.txt')
