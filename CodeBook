@@ -1,0 +1,104 @@
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+These signals were used to estimate variables of the feature vector for each pattern:  
+'ForXYZ' is used to denote 3-axial signals in the X, Y and Z directions.
+
+subject: Character
+Gives subject identifier. Possible values 1 to 30
+
+activityDes: Characters
+Gives the information about activity description. Possible values 
+ WALKING
+ WALKING_UPSTAIRS
+ WALKING_DOWNSTAIRS
+ SITTING
+ STANDING
+ LAYING
+Following codes are numeric. They are obtained by averaging observation 
+tBodyAccMeanForX
+tBodyAccMeanForY
+tBodyAccMeanForZ
+tBodyAccStdForX
+tBodyAccStdForY
+tBodyAccStdForZ
+tGravityAccMeanForX
+tGravityAccMeanForY
+tGravityAccMeanForZ
+tGravityAccStdForX
+tGravityAccStdForY
+tGravityAccStdForZ
+tBodyAccJerkMeanForX
+tBodyAccJerkMeanForY
+tBodyAccJerkMeanForZ
+tBodyAccJerkStdForX
+tBodyAccJerkStdForY
+tBodyAccJerkStdForZ
+tBodyGyroMeanForX
+tBodyGyroMeanForY
+tBodyGyroMeanForZ
+tBodyGyroStdForX
+tBodyGyroStdForY
+tBodyGyroStdForZ
+tBodyGyroJerkMeanForX
+tBodyGyroJerkMeanForY
+tBodyGyroJerkMeanForZ
+tBodyGyroJerkStdForX
+tBodyGyroJerkStdForY
+tBodyGyroJerkStdForZ
+tBodyAccMagMean
+tBodyAccMagStd
+tGravityAccMagMean
+tGravityAccMagStd
+tBodyAccJerkMagMean
+tBodyAccJerkMagStd
+tBodyGyroMagMean
+tBodyGyroMagStd
+tBodyGyroJerkMagMean
+tBodyGyroJerkMagStd
+fBodyAccMeanForX
+fBodyAccMeanForY
+fBodyAccMeanForZ
+fBodyAccStdForX
+fBodyAccStdForY
+fBodyAccStdForZ
+fBodyAccMeanFreqForX
+fBodyAccMeanFreqForY
+fBodyAccMeanFreqForZ
+fBodyAccJerkMeanForX
+fBodyAccJerkMeanForY
+fBodyAccJerkMeanForZ
+fBodyAccJerkStdForX
+fBodyAccJerkStdForY
+fBodyAccJerkStdForZ
+fBodyAccJerkMeanFreqForX
+fBodyAccJerkMeanFreqForY
+fBodyAccJerkMeanFreqForZ
+fBodyGyroMeanForX
+fBodyGyroMeanForY
+fBodyGyroMeanForZ
+fBodyGyroStdForX
+fBodyGyroStdForY
+fBodyGyroStdForZ
+fBodyGyroMeanFreqForX
+fBodyGyroMeanFreqForY
+fBodyGyroMeanFreqForZ
+fBodyAccMagMean
+fBodyAccMagStd
+fBodyAccMagMeanFreq
+fBodyBodyAccJerkMagMean
+fBodyBodyAccJerkMagStd
+fBodyBodyAccJerkMagMeanFreq
+fBodyBodyGyroMagMean
+fBodyBodyGyroMagStd
+fBodyBodyGyroMagMeanFreq
+fBodyBodyGyroJerkMagMean
+fBodyBodyGyroJerkMagStd
+fBodyBodyGyroJerkMagMeanFreq
+angle_between_tBodyAccMean_and_gravity
+angle_between_tBodyAccJerkMean_and_gravityMean
+angle_between_tBodyGyroMean_and_gravityMean
+angle_between_tBodyGyroJerkMean_and_gravityMean
+angleXAndgravityMean
+angleYAndgravityMean
+angleZAndgravityMean
