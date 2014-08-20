@@ -91,16 +91,27 @@ names(completeData) = featureLabel$feature;
 
 #Remove extra column on activity column
 completeData$activityCode = NULL
-
+#Remove unused variable to free up memory
 rm(dummyCol,extraCol)
+
+#Extract columns with Mean and Std apprearing in the column names
 colNums = grep('(Mean|Std)+',names(completeData))
+#Append activity description and subject identifier to extacted data
 colNums = c(562,563,colNums)
 #Getting colums related to mean and Std
 tidyDataSet1= completeData[,colNums]
+
+#Calculate the average based on subject and activity description
 tidyDataSet2 = aggregate(tidyDataSet1,by=list(tidyDataSet1$subject,tidyDataSet1$activityDes),FUN='mean')
+
+#Assign data to subject and activity des colums to maintain column names
 tidyDataSet2$subject = tidyDataSet2$Group.1;
 tidyDataSet2$activityDes = tidyDataSet2$Group.2;
+
+#Remove additional unwanted columns
 tidyDataSet2$Group.1 = NULL
 tidyDataSet2$Group.2 = NULL
+
+#Finally write the dataset to txt file which is to manually submitted
 write.table(tidyDataSet2,file='TidyDataSet.txt',row.names=F);
 
