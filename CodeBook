@@ -5,7 +5,6 @@ These signals were used to estimate variables of the feature vector for each pat
 'ForXYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
 
-
 subject: Character
 Gives subject identifier. Possible values 1 to 30
 
@@ -17,7 +16,19 @@ Gives the information about activity description. Possible values
  SITTING
  STANDING
  LAYING
-Following codes are numeric. They are obtained by averaging observation 
+ 
+ 
+Following codes are numeric. They are obtained by averaging observation for each subject and activity description
+
+
+The set of variables that were estimated from these signals are: 
+
+Mean: Mean value
+Std: Standard deviation
+angle: Angle between to vectors.
+
+Features derived from these are as below: 
+
 tBodyAccMeanForX
 tBodyAccMeanForY
 tBodyAccMeanForZ
